@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  redis-server:
+    image: 'redis'
+  docker:
+    image: docker
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
