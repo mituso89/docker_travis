@@ -6,7 +6,7 @@ before_install:
   - docker build -t myapp .
 
 script:
- - docker run -p 3000:3000 myapp
+ - docker run myapp
 
 deploy:
   provider: elasticbeanstalk
