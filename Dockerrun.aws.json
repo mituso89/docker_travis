@@ -2,9 +2,9 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinations": [
         {
-            "name": "my-app",
+            "name": "frontend",
             "image": "mituso/react-app-client",
-            "hostname": "my-app",
+            "hostname": "frontend",
             "essential": false,
             "memory": 128,
             "portMappings": [
