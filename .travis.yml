@@ -3,20 +3,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t myapp .
+  - docker build -t mituso/react-app-client -f ./my-app/Dockerfile.dev ./client
 
 script:
- - docker run myapp
+  - docker run -e CI=true mituso/react-app-client npm test
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker"
-  env: "Docker-env"
+  app: "nginx"
+  env: "Nginx-env"
   bucket_name: "elasticbeanstalk-us-east-2-190683250872"
   bucket_path: "docker"
   on: 
     branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-      secuse: $AWS_SECRET_KEY
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
