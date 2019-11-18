@@ -3,13 +3,13 @@ services:
   - nginx
 
 before_install:
-  - docker build -t mituso/react-app-client -f ./Dockerfile.dev .
+  - docker build -t mitusotuan/react-app-client -f ./Dockerfile.dev .
 
 script:
-  - docker run -e CI=true mituso/react-app-client npm test
+  - docker run -e CI=true mitusotuan/react-app-client npm test
 
 after_success:
-  - docker build -t mituso/react-app-client .
+  - docker build -t mitusotuan/react-app-client .
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
   
   - docker push react-app-client

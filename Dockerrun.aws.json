@@ -3,8 +3,8 @@
     "containerDefinations": [
         {
             "name": "my-app",
-            "image": "mituso/multi-client",
-            "hostname": "client",
+            "image": "mitusotuan/react-app-client",
+            "hostname": "my-app",
             "essential": false,
             "memory": 128,
             "portMappings": [
