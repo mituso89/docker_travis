@@ -1,6 +1,6 @@
 sudo: required
 services: 
-  - docker
+  - nginx
 
 before_install:
   - docker build -t mituso/react-app-client -f ./my-app/Dockerfile.dev .
