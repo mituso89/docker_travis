@@ -1,18 +1,12 @@
 {
-    "AWSEBDockerrunVersion": 1,
-    "containerDefinations": [
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "mituso/react-app-client",
+        "Update": "true"
+      },
+      "Ports": [
         {
-            "name": "frontend",
-            "image": "mituso/react-app-client",
-            "hostname": "frontend",
-            "essential": false,
-            "memory": 128,
-            "portMappings": [
-                {
-                    "hostPort": 80,
-                    "containerPort": 80
-                }
-            ]
+          "ContainerPort": "80"
         }
     ]
 }
