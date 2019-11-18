@@ -3,7 +3,7 @@
     "containerDefinations": [
         {
             "name": "my-app",
-            "image": "mitusotuan/react-app-client",
+            "image": "mituso/react-app-client",
             "hostname": "my-app",
             "essential": false,
             "memory": 128,
