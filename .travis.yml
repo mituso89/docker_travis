@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t mituso/react-app-client -f ./my-app/Dockerfile.dev ./client
+  - docker build -t mituso/react-app-client -f ./Dockerfile.dev ./my-app
 
 script:
   - docker run -e CI=true mituso/react-app-client npm test
