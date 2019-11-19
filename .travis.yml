@@ -3,7 +3,7 @@ services:
   - nginx
 
 before_install:
-  - docker build -t mituso/react-app-client -f ./frontend/Dockerfile.dev ./frontend
+  - docker build -t mituso/react-app-client -f ./my-app/Dockerfile.dev ./my-app
 
 script:
   - docker run -e CI=true mituso/react-app-client npm test
