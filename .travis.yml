@@ -9,18 +9,20 @@ script:
   - docker run -e CI=true mituso/react-app-client npm test
 
 after_success:
-  - docker build -t mituso/react-app-client .
+  - docker build -t mituso/react-app-client ./my-app
+  - docker build -t mituso/multi-nginx-client ./nginx
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
   
   - docker push react-app-client
+  - docker push mituso/multi-nginx-client
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "nginx"
-  env: "Nginx-env"
+  app: "docker"
+  env: "Docker-env"
   bucket_name: "elasticbeanstalk-us-east-2-190683250872"
-  bucket_path: "docker"
+  bucket_path: "dockerenv"
   on: 
     branch: master
   access_key_id: $AWS_ACCESS_KEY
