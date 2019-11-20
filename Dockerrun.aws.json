@@ -2,7 +2,7 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "client",
+      "name": "my-app",
       "image": "mituso/react-app-client",
       "hostname": "client",
       "essential": false,
@@ -19,7 +19,7 @@
           "containerPort": 80
         }
       ],
-      "links": ["client", "server"],
+      "links": ["my-app"],
       "memory": 128
     }
   ]
