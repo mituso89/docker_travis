@@ -19,8 +19,8 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker"
-  env: "Docker-env"
+  app: "Myapp"
+  env: "myapp"
   bucket_name: "elasticbeanstalk-us-east-2-190683250872"
   bucket_path: "dockerenv"
   on: 
